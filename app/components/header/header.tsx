@@ -1,61 +1,27 @@
 import React from "react"
-import { View, ViewStyle, TextStyle } from "react-native"
 import { HeaderProps } from "./header.props"
-import { Button } from "../button/button"
 import { Text } from "../text/text"
-import { Icon } from "../icon/icon"
-import { spacing } from "../../theme"
-import { translate } from "../../i18n/"
-
-// static styles
-const ROOT: ViewStyle = {
-  flexDirection: "row",
-  paddingHorizontal: spacing[4],
-  alignItems: "center",
-  paddingTop: spacing[5],
-  paddingBottom: spacing[5],
-  justifyContent: "flex-start",
-}
-const TITLE: TextStyle = { textAlign: "center" }
-const TITLE_MIDDLE: ViewStyle = { flex: 1, justifyContent: "center" }
-const LEFT: ViewStyle = { width: 32 }
-const RIGHT: ViewStyle = { width: 32 }
-
-/**
- * Header that appears on many screens. Will hold navigation buttons and screen title.
- */
+import { TextStyle } from "react-native"
+import { color, spacing, typography } from "../../theme"
 export function Header(props: HeaderProps) {
-  const {
-    onLeftPress,
-    onRightPress,
-    rightIcon,
-    leftIcon,
-    headerText,
-    headerTx,
-    style,
-    titleStyle,
-  } = props
-  const header = headerText || (headerTx && translate(headerTx)) || ""
+  const { style, titleStyle, title } = props
 
-  return (
-    <View style={[ROOT, style]}>
-      {leftIcon ? (
-        <Button preset="link" onPress={onLeftPress}>
-          <Icon icon={leftIcon} />
-        </Button>
-      ) : (
-        <View style={LEFT} />
-      )}
-      <View style={TITLE_MIDDLE}>
-        <Text style={[TITLE, titleStyle]} text={header} />
-      </View>
-      {rightIcon ? (
-        <Button preset="link" onPress={onRightPress}>
-          <Icon icon={rightIcon} />
-        </Button>
-      ) : (
-        <View style={RIGHT} />
-      )}
-    </View>
-  )
+  const HEADER_STYLE: TextStyle = {
+    color: color.darkTheme.text,
+    fontFamily: typography.primary,
+    fontWeight: "bold",
+    fontSize: 48,
+    lineHeight: 15,
+    textAlign: "center",
+    letterSpacing: 1.5,
+    backgroundColor: color.darkTheme.header,
+    paddingTop: spacing[8] + spacing[6],
+    paddingBottom: spacing[4],
+    paddingHorizontal: 0,
+    marginHorizontal: 0,
+    includeFontPadding: false,
+    alignSelf: "stretch",
+  }
+  const STYLE = style || HEADER_STYLE
+  return <Text preset="header" style={[STYLE, titleStyle]} text={title || "Tabs"} />
 }
