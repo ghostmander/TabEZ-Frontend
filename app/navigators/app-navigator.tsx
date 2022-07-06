@@ -8,7 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen, DemoScreen, DemoListScreen } from "../screens"
+import { LoginScreen, HomeScreen, PaymentScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**
@@ -24,10 +24,14 @@ import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type NavigatorParamList = {
-  welcome: undefined
-  demo: undefined
-  demoList: undefined
-  // 🔥 Your screens go here
+  login: undefined
+  home: undefined
+  payment: undefined
+  confirmation: undefined
+  tabList: undefined
+  clearanceRequested: undefined
+  clearanceRequest: undefined
+  allCleared: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -39,12 +43,11 @@ const AppStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="welcome"
+      initialRouteName="login"
     >
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
-      <Stack.Screen name="demo" component={DemoScreen} />
-      <Stack.Screen name="demoList" component={DemoListScreen} />
-      {/** 🔥 Your screens go here */}
+      <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Screen name="home" component={HomeScreen} />
+      <Stack.Screen name="payment" component={PaymentScreen} />
     </Stack.Navigator>
   )
 }
