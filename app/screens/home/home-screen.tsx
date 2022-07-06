@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { View, ViewStyle, TextStyle } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
-import { Button, Screen, Text } from "../../components"
+import { Button, Header, Screen, Text } from "../../components"
 import { color, spacing, typography } from "../../theme"
 import { NavigatorParamList } from "../../navigators"
 
@@ -22,22 +22,6 @@ const TEXT: TextStyle = {
   color: color.darkTheme.text,
   fontFamily: typography.primary,
   fontSize: 18,
-}
-const BOLD: TextStyle = { fontWeight: "bold" }
-const HEADER_TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 48,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
-  backgroundColor: color.darkTheme.header,
-  paddingTop: spacing[8] + spacing[6],
-  paddingBottom: spacing[4],
-  paddingHorizontal: 0,
-  marginHorizontal: 0,
-  includeFontPadding: false,
-  alignSelf: "stretch",
 }
 const BTN: ViewStyle = {
   height: 100,
@@ -61,7 +45,7 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
-        <Text preset="header" style={HEADER_TITLE} text="Tabs" />
+        <Header />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
           <Button onPress={payment} style={BTN} textStyle={BTN_TEXT} text="I'm Paying!!!" />
           <Button onPress={tabList} style={BTN} textStyle={BTN_TEXT} text="My Tabs" />
