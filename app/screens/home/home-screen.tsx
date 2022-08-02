@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { View, ViewStyle, TextStyle } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
-import { Button, Header, Screen, Text } from "../../components"
+import { Button, Header, Screen } from "../../components"
 import { color, spacing, typography } from "../../theme"
 import { NavigatorParamList } from "../../navigators"
 

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { View, Alert } from "react-native"
+import { View } from "react-native"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
 import { Header } from "./header"
@@ -23,20 +23,12 @@ storiesOf("Header", module)
       </UseCase>
       <UseCase noPad text="leftIcon" usage="A left nav icon">
         <View style={VIEWSTYLE}>
-          <Header
-            headerTx="demoScreen.howTo"
-            leftIcon="back"
-            onLeftPress={() => Alert.alert("left nav")}
-          />
+          <Header headerTx="demoScreen.howTo" />
         </View>
       </UseCase>
       <UseCase noPad text="rightIcon" usage="A right nav icon">
         <View style={VIEWSTYLE}>
-          <Header
-            headerTx="demoScreen.howTo"
-            rightIcon="bullet"
-            onRightPress={() => Alert.alert("right nav")}
-          />
+          <Header headerTx="demoScreen.howTo" />
         </View>
       </UseCase>
     </Story>

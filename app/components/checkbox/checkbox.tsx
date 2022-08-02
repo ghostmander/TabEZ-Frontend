@@ -36,6 +36,7 @@ export function Checkbox(props: CheckboxProps) {
   const rootStyle = [ROOT, props.style]
   const outlineStyle = [OUTLINE, props.outlineStyle]
   const fillStyle = [FILL, props.fillStyle]
+  const textStyle = props.textStyle || LABEL
 
   const onPress = props.onToggle ? () => props.onToggle && props.onToggle(!props.value) : null
 
@@ -47,7 +48,7 @@ export function Checkbox(props: CheckboxProps) {
       style={rootStyle}
     >
       <View style={outlineStyle}>{props.value && <View style={fillStyle} />}</View>
-      <Text text={props.text} tx={props.tx} numberOfLines={numberOfLines} style={LABEL} />
+      <Text text={props.text} tx={props.tx} numberOfLines={numberOfLines} style={textStyle} />
     </TouchableOpacity>
   )
 }

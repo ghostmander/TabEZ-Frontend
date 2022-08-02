@@ -4,7 +4,7 @@
   "expo": {
     "name": "TabsPhoneApp",
     "slug": "TabsPhoneApp",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/app-icon-all.png",
     "splash": {
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
         "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
-      }
+      },
+      "package": "cs.proj.tabez"
     },
     "ios": {
       "icon": "./assets/images/app-icon-ios.png",
