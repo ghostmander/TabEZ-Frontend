@@ -20,6 +20,8 @@ export const darkTheme = {
   textUnderline: "#AEAEAE",
   amountColor: "#D1D1D1",
   textBoxPlaceholder: "#C7C7C7",
+  amountUnderline: "#6B6B6B",
+  checkboxDisabled: "#ADACAC",
 }
 
 export const lightTheme = {

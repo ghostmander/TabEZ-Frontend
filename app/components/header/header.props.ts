@@ -15,4 +15,9 @@ export interface HeaderProps {
    * Title text.
    */
   title?: string
+
+  /**
+   * Header TX
+   */
+  headerTx?: string
 }
