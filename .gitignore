@@ -82,3 +82,12 @@ web-build/
 # Configurations
 app/config/env.*.js
 !env.js
+
+# Compressed Files
+*.rar
+*.tar
+*.tar.*
+*.zip
+*.tgz
+*.gz
+*.7z
